@@ -1,0 +1,1 @@
+SELECT * FROM (SELECT part_1.name, part_1.year, part_2.year, part_3.year FROM participation as part_1, participation as part_2, participation as part_3 WHERE (part_1.name = part_2.name) AND part_2.name = part_3.name AND part_1.year = part_2.year + 1 AND part_1.year = part_3.year + 2 ORDER BY part_1.name, part_1.year) as consec_years GROUP BY name;
